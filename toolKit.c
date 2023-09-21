@@ -7,7 +7,7 @@
 
 void mostra_vetor( int x[], int k, char nome[] ){
 	int i;
-	printf("%s: ", nome);
+	printf("%s", nome);
 	for( i = 0 ; i < k ; i++ ){
 		printf("%d ", x[i] );
 	}
@@ -107,15 +107,15 @@ void gera_valores_matriz( int lin, int col, int x[lin][col] ){
 	int i, j;
 	for( i = 0 ; i < lin ; i++ )
 		for( j = 0 ; j < col ; j++ )
-			x[i][j] = rand() % 1000;
+			x[i][j] = rand() % 10;
 }
 
 void mostra_matriz( int lin, int col, int x[lin][col] ){
 	int i, j;
-	printf("Dados da Matiz %dx%d:\n", lin, col);
+	printf("Dados da Matriz %dx%d:\n", lin, col);
 	for( i = 0 ; i < lin ; i++ ){
 		for( j = 0 ; j < col ; j++ ){
-			printf("%d\t", x[i][j]);
+			printf("%4d\t", x[i][j]);
 		}
 		printf("\n");
 	}
@@ -148,6 +148,61 @@ void diagonal_secundaria( int dim, int x[dim][dim] ){
 	*/
 	printf("\n\n");
 }
+
+float medias_pares(int lin, int col, int x[lin][col]){
+	float medias = 0, cont = 0;
+	for (int i = 0; i < lin; i++){
+		for (int j = 0; j < col; j++){
+			if (x[i][j]%2 == 0){
+				medias += x[i][j];
+				cont ++;
+			}
+		}
+	}
+	if (cont == 0){
+		//gambiarra para n dar erro se divisivel por 0
+		return 0;
+	}
+	return medias/cont;
+}
+
+void gera_trasnposta(int lin, int col, int x[lin][col], int t[col][lin]){
+	for (int i = 0; i < lin; i++){
+		for (int j = 0; j < col; j++){
+			t[j][i] = x[i][j];
+		}
+		
+	}
+	
+}
+
+void soma_matriz(int lin, int col, int x[lin][col], int y[lin][col],int soma[lin][col]){
+	for (int i = 0; i < lin; i++){
+		for (int j = 0; j < col; j++){
+			soma[i][j] = x[i][j] + y[i][j];
+		}
+	}
+}
+
+void multiplica_matriz(int lin_a, int col_a, int m[lin_a][col_a],int lin_b, int col_b,  int m2[lin_b][col_b], int mult[lin_a][col_b]){
+	for (size_t i = 0; i < lin_a; i++){
+		for (int j = 0; j < col_b; j++){
+			int soma = 0;
+			for(int k = 0; k < col_a;k++){
+				soma += m[i][k]*m2[k][j];
+			}
+			mult[i][j] = soma;
+		}
+	}
+	
+}
+
+
+
+
+
+
+
 
 
 

@@ -12,6 +12,15 @@ void mostra_matriz( int lin, int col, int x[lin][col] );
 void gera_valores_matriz( int lin, int col, int x[lin][col] );
 void diagonal_principal( int dim, int x[dim][dim] );
 void diagonal_secundaria( int dim, int x[dim][dim] );
+float medias_pares(int lin, int col, int x[lin][col]);
+void gera_trasnposta(int lin, int col, int x[lin][col], int t[col][lin]);
+void soma_matriz(int lin, int col, int x[lin][col], int y[lin][col],int soma[lin][col]);
+void multiplica_matriz(int lin_a, int col_a, int m[lin_a][col_a],int lin_b, int col_b,  int m2[lin_b][col_b], int mult[lin_a][col_b]);
+
+//fazer copia de matriz
+//inversa de matriz
+//pegar valor matriz
+//multiplicar por const
 
 //Funçoes matematicas
 int min(int a, int b);

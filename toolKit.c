@@ -101,6 +101,88 @@ int busca_binaria( int x[], int n, int chave ){
 	return -1;
 }
 
+void prencher_vetor(int v[], int n, int fill){
+	for(int i = 0; i < n; i++){
+		v[i] = fill;
+	}
+}
+
+void inverte_vetor(int v[], int n){
+	int aux;
+	int imax = n-1;
+	for(int i = 0; i < n/2; i++){
+		aux = v[i];
+		v[i] = v[imax-i];
+		v[imax-i] = aux;
+	}
+}
+
+int compara_vetores(int m, int v[], int h[]){
+    for (int i = 0; i < m; i++){
+        if (v[i] != h[i]){
+            return 0;
+        }
+    }
+    return 1;   
+}
+
+void fibonacci(int v[], int n){
+    v[0] = 1;
+    v[1] = 1;
+    for(int i = 2; i< n; i++){
+        v[i] = v[i-2] + v[i-1];
+    }
+}
+
+int soma_primos(int v[], int n){
+    int sum = 0;
+    for(int i =0; i< n; i++){
+        if (isPrimo(v[i])){
+            sum += v[i];
+        }
+    }
+    return sum;
+}
+
+void busca_todos(int v[], int n, int chave, int ind[]){
+    int cont = 0;
+    for(int i = 0; i< n; i++){
+        if (v[i] == chave){
+            ind[cont] = i;
+            cont++;
+        }
+    }
+}
+
+int busca_seq_recursiva(int v[], int n, int chave){
+    
+    return busca_seq_recursiva_aux(v, n, chave, 0);
+    
+}
+
+int busca_seq_recursiva_aux(int v[], int n, int chave, int aux){
+    if (aux == n){
+        return -1;
+    }
+    if (v[aux] == chave){
+        return aux;
+    }
+    return busca_seq_recursiva_aux(v, n, chave, aux+1);
+    
+    
+}
+
+void pega_valores(int v[], int n){
+	for(int i = 0; i < n; i++){
+		scanf("%i", &v[i]);
+	}
+}
+
+
+
+
+
+
 // Fun��es para matrizes
 
 void gera_valores_matriz( int lin, int col, int x[lin][col] ){
@@ -209,20 +291,25 @@ void multiplica_matriz(int lin_a, int col_a, int m[lin_a][col_a],int lin_b, int 
 //funcoes matematicas
 
 int min(int a, int b){
-	if (a < b){
-		return a;
-	}else{
-		return b;
-	}
+	return a*(a<=b) + b*(b<a);
 }
 int max(int a, int b){
-	if (a > b){
-		return a;
-	}else{
-		return b;
-	}
+	return a*(a>=b) + b*(b>a);
 }
 
+int isPrimo(int n){
+	if (n == 0 || n == 1){
+		return 0;
+	}
+	
+	for (int i = 2; i <= n/2; i++){
+		if (n%i == 0){
+			return 0;
+		}
+	}
+	return 1;
+	
+}
 
 
 

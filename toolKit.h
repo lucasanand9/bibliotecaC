@@ -6,6 +6,16 @@ void mostra_vetor_2( int x[], int k, char nome[] );
 void selection_sort( int x[], int k );
 void bubble_sort( int x[], int k );
 int busca_binaria( int x[], int n, int chave );
+void prencher_vetor(int v[], int n, int fill);
+void inverte_vetor(int v[], int n);
+int compara_vetores(int m, int v[], int h[]);
+void fibonacci(int v[], int n);//salva os valores da sequencia ate preencher o vetor
+int soma_primos(int v[], int n);
+void busca_todos(int v[], int n, int chave, int ind[]);
+int busca_seq_recursiva(int v[], int n, int chave);
+int busca_seq_recursiva_aux(int v[], int n, int chave, int aux);
+void pega_valores(int v[], int n);
+
 
 // Fun��es para matrizes
 void mostra_matriz( int lin, int col, int x[lin][col] );
@@ -25,4 +35,5 @@ void multiplica_matriz(int lin_a, int col_a, int m[lin_a][col_a],int lin_b, int 
 //Funçoes matematicas
 int min(int a, int b);
 int max(int a, int b);
+int isPrimo(int n);
 

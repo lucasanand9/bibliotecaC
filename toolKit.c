@@ -279,6 +279,14 @@ void multiplica_matriz(int lin_a, int col_a, int m[lin_a][col_a],int lin_b, int 
 	
 }
 
+void preencher_matriz(int m, int n, int matriz[m][n], int num){
+    for (int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
+            matriz[i][j] = num;
+        }
+    }    
+}
+
 
 
 

@@ -26,7 +26,7 @@ float medias_pares(int lin, int col, int x[lin][col]);
 void gera_trasnposta(int lin, int col, int x[lin][col], int t[col][lin]);
 void soma_matriz(int lin, int col, int x[lin][col], int y[lin][col],int soma[lin][col]);
 void multiplica_matriz(int lin_a, int col_a, int m[lin_a][col_a],int lin_b, int col_b,  int m2[lin_b][col_b], int mult[lin_a][col_b]);
-
+void preencher_matriz(int m, int n, int matriz[m][n], int num);
 //fazer copia de matriz
 //inversa de matriz
 //pegar valor matriz
